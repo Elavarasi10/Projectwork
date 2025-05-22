@@ -8,7 +8,7 @@ pipeline{
         }
         stage ('Build Docker image'){
             steps {
-                sh 'docker pull httpd'
+                sh 'docker pull httpd:latest'
             }
         }
     }
