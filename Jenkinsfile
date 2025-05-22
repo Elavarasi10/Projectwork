@@ -8,8 +8,15 @@ pipeline{
         }
         stage ('Build Docker image'){
             steps {
-                sh 'docker pull httpd:latest'
+                sh 'docker pull httpd:latest .'
             }
         }
-    }
-}
+        stage('Remove previous container'){
+            steps {
+                sh 
+                '''docker rm -f demo-web-container||true
+                docker run -itd --name demo-web-container -p 8081:80 httpd'''
+                    }
+            }
+        }
+         }
