@@ -15,9 +15,8 @@ pipeline{
         stage('Remove previous container'){
             steps {
                 sh 
-                '''docker rm -f demo-web-container||true
-                docker run -itd --name new-web-container -p 8081:80 httpd'''
-                    }
-            }
+                'docker rm -f demo-web-container'
+             }
+        }
     }
 }
