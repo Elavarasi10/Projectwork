@@ -11,11 +11,5 @@ pipeline{
                 sh 'docker pull httpd:latest'
             }
         }
-        stage('Run docker container'){
-            steps {
-                sh 
-                'docker run -itd --name demo-web-container -p "8081:80" httpd'
-                    }
-            }
-        }
+    }
 }
