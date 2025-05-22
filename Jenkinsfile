@@ -11,12 +11,11 @@ pipeline{
                 sh 'docker pull httpd:latest'
             }
         }
-        stage('Remove previous container'){
+        stage('Run docker container'){
             steps {
                 sh 
-                '''docker rm -f demo-web-container||true
-                docker run -itd --name demo-web-container -p 8081:80 httpd'''
+                'docker run -itd --name demo-web-container -p "8081:80" httpd'
                     }
             }
         }
-         }
+}
