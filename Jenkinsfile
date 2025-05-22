@@ -8,7 +8,7 @@ pipeline{
         }
         stage ('Build Docker image'){
             steps {
-                sh 'docker pull httpd:latest .'
+                sh 'docker pull httpd:latest'
             }
         }
         stage('Remove previous container'){
