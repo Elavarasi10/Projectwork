@@ -6,10 +6,5 @@ pipeline{
               git 'https://github.com/Elavarasi10/Projectwork.git'
             }
         }
-        stage ('Build Docker image'){
-            steps {
-                sh 'docker build -t demo-webapp
-            }
-        }
     }
 }
