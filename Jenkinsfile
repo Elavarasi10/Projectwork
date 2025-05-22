@@ -8,6 +8,6 @@ pipeline{
         }
         stage ('Build Docker image'){
             steps {
-                sh 'docker build -t elavarasi10/demo-webapp:latest'
+                sh 'docker build -t elavarasi10/demo-webapp:latest .'
             }
         }
