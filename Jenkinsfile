@@ -8,7 +8,7 @@ pipeline{
        }
         stage ('Build Docker image'){
             steps {
-                sh 'docker build -t demo-webapp
+                sh 'docker build -t demo-webapp'
             }
         }
     }
