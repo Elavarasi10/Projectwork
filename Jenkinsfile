@@ -11,12 +11,10 @@ pipeline{
                 sh 'docker pull httpd:latest'
             }
         }
-
         stage('Remove previous container'){
             steps {
-                sh 
-                'docker rm -f demo-web-container'
-             }
+                sh 'docker run -itd --newwebcontainer -p "5050:80" httpd'
+                }
+            }
         }
     }
-}
