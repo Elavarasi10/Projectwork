@@ -13,7 +13,7 @@ pipeline{
         }
         stage('Remove previous container'){
             steps {
-                sh 'docker rm -f  dockcontainer'
+                sh 'docker rm -f  container1'
             }
         }
         stage('Run container'){
