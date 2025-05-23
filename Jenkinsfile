@@ -18,7 +18,7 @@ pipeline{
         }
         stage('Run container'){
             steps {
-                sh 'docker run -itd --name container2 -p "5050:80" httpd'
+                sh 'docker run -itd --name newwebcontainer -p "5151:80" httpd'
             }
         }
     }
