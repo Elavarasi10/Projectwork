@@ -13,10 +13,13 @@ pipeline{
         }
         stage('Remove previous container'){
             steps {
-                sh 
-                 "docker rm -f  dockcontainer||true
-                 docker run -itd --name newwebcontainer -p "5050:80" httpd"
-                }
+                sh 'docker rm -f  dockcontainer'
+            }
+        }
+        stage('Run container'){
+            steps {
+                sh 'docker run -itd --name newwebcontainer -p "5050:80" httpd'
             }
         }
     }
+}
