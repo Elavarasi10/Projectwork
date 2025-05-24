@@ -6,20 +6,5 @@ pipeline{
               git 'https://github.com/Elavarasi10/Projectwork.git'
             }
         }
-        stage ('Build Docker image'){
-            steps {
-                sh 'docker pull httpd:latest'
-            }
-        }
-        stage('Remove previous container'){
-            steps {
-                sh 'docker rm -f  newwebcontainer'
-            }
-        }
-        stage('Run container'){
-            steps {
-                sh 'docker run -itd --name newwebcontainer -p "5151:80" httpd'
-            }
-        }
     }
 }
